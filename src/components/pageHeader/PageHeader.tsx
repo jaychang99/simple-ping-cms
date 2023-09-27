@@ -15,6 +15,8 @@ export const PageHeader = ({ title, description }: Props) => {
 };
 
 const EmotionWrapper = styled.div`
+  margin-bottom: 48px;
+
   h1 {
     font-size: 24px;
     font-weight: 700;

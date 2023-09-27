@@ -8,10 +8,7 @@ export default function Home() {
         <title>Simple Ping CMS</title>
       </Head>
 
-      <PageHeader
-        title="노출 페이지 관리"
-        description="노출되는 페이지를 관리할 수 있습니다. "
-      />
+      <PageHeader title="SCG STATUS CMS" description="SCG status CMS" />
     </>
   );
 }

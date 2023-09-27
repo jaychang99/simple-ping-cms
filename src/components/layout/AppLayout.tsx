@@ -22,7 +22,7 @@ type Props = {
 export const AppLayout: React.FC<Props> = ({ children }) => (
   <Space direction="vertical" style={{ width: '100%' }} size={[0, 48]}>
     <Layout hasSider>
-      <Sider style={siderStyle}>Menu</Sider>
+      <Sider style={siderStyle}>SCG STATUS CMS</Sider>
       <Content style={contentStyle}>{children}</Content>
     </Layout>
   </Space>

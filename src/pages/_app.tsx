@@ -1,9 +1,13 @@
 import { AppLayout } from 'components/layout/AppLayout';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { GlobalStyles } from 'styles/GlobalStyles';
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const isLoginPage = router.pathname === '/login';
+
   return (
     <>
       <Head>
@@ -13,9 +17,13 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Simple Ping CMS</title>
       </Head>
       <GlobalStyles />
-      <AppLayout>
+      {isLoginPage ? (
         <Component {...pageProps} />
-      </AppLayout>
+      ) : (
+        <AppLayout>
+          <Component {...pageProps} />
+        </AppLayout>
+      )}
     </>
   );
 }

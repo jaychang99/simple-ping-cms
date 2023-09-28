@@ -8,8 +8,8 @@ phases:
     commands:
       - npm install --force
       - npm run build
-      - cp Procfile dist/ # Copy Procfile to the build output directory
-      - cp package.json dist/ # Copy package.json to the build output directory
+      - cp Procfile .next/ # Copy Procfile to the build output directory
+      - cp package.json .next/ # Copy package.json to the build output directory
   build:
     commands:
       - echo "Build completed on `date`"
@@ -17,4 +17,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: dist
+  base-directory: .next

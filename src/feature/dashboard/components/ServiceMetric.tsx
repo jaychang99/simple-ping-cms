@@ -29,7 +29,7 @@ const EmotionWrapper = styled.div`
 
   flex-direction: column;
   gap: 16px;
-  padding: 16px;
+  padding: 32px;
   border-radius: 8px;
 
   min-height: 300px;

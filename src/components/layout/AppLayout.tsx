@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Layout, Space } from 'antd';
+import UserProfile from 'components/layout/components/UserProfile';
 
 const { Sider, Content } = Layout;
 
@@ -22,7 +23,9 @@ type Props = {
 export const AppLayout: React.FC<Props> = ({ children }) => (
   <Space direction="vertical" style={{ width: '100%' }} size={[0, 48]}>
     <Layout hasSider>
-      <Sider style={siderStyle}>SCG STATUS CMS</Sider>
+      <div style={{ padding: 32 }}>
+        <UserProfile />
+      </div>
       <Content style={contentStyle}>{children}</Content>
     </Layout>
   </Space>

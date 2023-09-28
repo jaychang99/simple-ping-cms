@@ -7,4 +7,5 @@ export interface Log {
   value: 'SUCCESS' | 'ERROR';
   serviceUuid: string;
   deletedAt: null | Dayjs;
+  responseTime: null | number;
 }

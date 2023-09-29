@@ -6,6 +6,8 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: process.env.CLIENT_BASE_URL,
+        port: '443',
       },
     ],
   },

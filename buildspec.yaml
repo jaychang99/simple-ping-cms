@@ -7,14 +7,19 @@ phases:
   pre_build:
     commands:
       - npm install
-      - npm run build
       # - cp Procfile .next/ # Copy Procfile to the build output directory
       # - cp package.json .next/ # Copy package.json to the build output directory
   build:
     commands:
+      - npm run build
       - echo "Build completed on `date`"
 
 artifacts:
   files:
-    - '**/*'
-  base-directory: '.'
+    - 'package-lock.json'
+    - 'package.json'
+    - 'public/**/*'
+    - '.next/**/*'
+cache:
+  paths:
+    - 'node_modules/**/*'

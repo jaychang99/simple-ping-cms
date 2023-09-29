@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "npm run start -p 8080"
+    "deploy": "next start -p 8080"
   },
   "dependencies": {
     "@ant-design/charts": "^1.4.2",

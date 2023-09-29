@@ -10,7 +10,7 @@ export const ViewLogin = () => {
       <h1>SCG Status Page CMS</h1>
       <h2>SCG status Page 를 위한 CMS 입니다.</h2>
       <a href={loginUrl}>
-        <Image
+        <img
           src="/images/buttons/btn_google_signin_light_normal_web@2x.png"
           width={191}
           height={46}

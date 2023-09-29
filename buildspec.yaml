@@ -6,10 +6,10 @@ phases:
       nodejs: 18
   pre_build:
     commands:
-      - npm install --force
+      - npm install
       - npm run build
-      - cp Procfile .next/ # Copy Procfile to the build output directory
-      - cp package.json .next/ # Copy package.json to the build output directory
+      # - cp Procfile .next/ # Copy Procfile to the build output directory
+      # - cp package.json .next/ # Copy package.json to the build output directory
   build:
     commands:
       - echo "Build completed on `date`"

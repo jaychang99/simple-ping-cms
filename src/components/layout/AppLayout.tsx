@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Layout, Space } from 'antd';
 import UserProfile from 'components/layout/components/UserProfile';
+import MenuList from 'components/layout/components/MenuList';
 
 const { Sider, Content } = Layout;
 
@@ -25,6 +26,7 @@ export const AppLayout: React.FC<Props> = ({ children }) => (
     <Layout hasSider>
       <div style={{ padding: 32 }}>
         <UserProfile />
+        <MenuList />
       </div>
       <Content style={contentStyle}>{children}</Content>
     </Layout>

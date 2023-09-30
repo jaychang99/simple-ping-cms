@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Button, DatePicker, Form } from 'antd';
+import PageSubTitle from 'components/typography/PageSubTitle';
 import dayjs from 'dayjs';
 import ServiceMetric from 'feature/dashboard/components/ServiceMetric';
 import useGetServiceWithLogs from 'feature/dashboard/hooks/useGetServiceWithLogs';
@@ -36,7 +37,7 @@ const ViewDashboard = ({}: Props) => {
 
   return (
     <EmotionWrapper>
-      <h3>서비스 지표</h3>
+      <PageSubTitle>서비스 지표</PageSubTitle>
       <Form
         layout="inline"
         onFinish={handleFinish}
@@ -73,13 +74,6 @@ const ViewDashboard = ({}: Props) => {
 export default ViewDashboard;
 
 const EmotionWrapper = styled.div`
-  h3 {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 16px;
-
-    color: ${({ theme }) => theme.color.gray400};
-  }
   .metric-container {
     display: grid;
 

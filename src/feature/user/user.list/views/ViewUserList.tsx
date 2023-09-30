@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Table } from 'antd';
+import PageSubTitle from 'components/typography/PageSubTitle';
 import useGetUsers from 'feature/user/hooks/useGetUsers';
 import { ColumnUserList } from 'feature/user/user.list/components/ColumnUserList';
 
@@ -11,21 +12,11 @@ const ViewUserList = ({}: Props) => {
   });
 
   return (
-    <EmotionWrapper>
-      <h3>유저 목록</h3>
+    <>
+      <PageSubTitle>유저 목록</PageSubTitle>
       <Table columns={ColumnUserList({ mutate })} dataSource={data} />
-    </EmotionWrapper>
+    </>
   );
 };
 
 export default ViewUserList;
-
-const EmotionWrapper = styled.div`
-  h3 {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 16px;
-
-    color: ${({ theme }) => theme.color.gray400};
-  }
-`;

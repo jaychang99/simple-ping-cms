@@ -1,4 +1,5 @@
 import { ThemeProvider } from '@emotion/react';
+import CheckingAuth from 'components/error/CheckingAuth';
 import { AppLayout } from 'components/layout/AppLayout';
 import { useCheckAuth } from 'hooks/useCheckAuth';
 import type { AppProps } from 'next/app';
@@ -15,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const { isAuthed, isAuthNeeded } = useCheckAuth();
 
   if (!isAuthed && isAuthNeeded) {
-    return <p>접근 권한 확인 중...</p>;
+    return <CheckingAuth />;
   }
 
   return (

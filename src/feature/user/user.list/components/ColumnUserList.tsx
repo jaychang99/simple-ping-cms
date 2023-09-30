@@ -10,18 +10,6 @@ type TColumnUserList = {
 export const ColumnUserList = ({ mutate }: TColumnUserList) => {
   const columns: TableProps<User>['columns'] = [
     {
-      key: 'uuid',
-      title: 'UUID',
-      dataIndex: 'uuid',
-      width: 120,
-    },
-    {
-      key: 'email',
-      title: '이메일',
-      dataIndex: 'email',
-      width: 120,
-    },
-    {
       key: 'name',
       title: '이름',
       width: 120,
@@ -32,6 +20,12 @@ export const ColumnUserList = ({ mutate }: TColumnUserList) => {
           </span>
         );
       },
+    },
+    {
+      key: 'email',
+      title: '이메일',
+      dataIndex: 'email',
+      width: 120,
     },
     {
       key: 'isAdmin',

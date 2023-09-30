@@ -82,7 +82,14 @@ const EmotionWrapper = styled.div`
   }
   .metric-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+    ${({ theme }) => theme.device.pc} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    ${({ theme }) => theme.device.tablet} {
+      grid-template-columns: repeat(1, 1fr);
+    }
     grid-gap: 16px;
   }
 

@@ -1,13 +1,15 @@
-import "@emotion/react";
+import '@emotion/react';
 
-declare module "@emotion/react" {
+declare module '@emotion/react' {
   export interface DeviceTheme {
     fold: number;
     mobile: number;
+    tablet: number;
   }
   export interface DeviceMediaTheme {
     fold: string;
     mobile: string;
+    tablet: string;
     pc: string;
   }
 

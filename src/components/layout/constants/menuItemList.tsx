@@ -1,6 +1,10 @@
 import { MenuProps } from 'antd';
 import Link from 'next/link';
-import { ApartmentOutlined, HomeOutlined } from '@ant-design/icons';
+import {
+  ApartmentOutlined,
+  HomeOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
 
 export const MENU_ITEM_LIST: MenuProps['items'] = [
   {
@@ -24,5 +28,11 @@ export const MENU_ITEM_LIST: MenuProps['items'] = [
         label: <Link href="/services/create">서비스 생성</Link>,
       },
     ],
+  },
+  {
+    key: 'user',
+    icon: <UserOutlined />,
+    title: 'User',
+    label: <Link href="/users">유저 관리</Link>,
   },
 ];

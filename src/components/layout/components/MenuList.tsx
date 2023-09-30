@@ -8,6 +8,7 @@ const MenuList = ({}: Props) => {
   return (
     <EmotionWrapper>
       <Menu
+        mode="inline"
         items={MENU_ITEM_LIST}
         style={{
           border: 'none',

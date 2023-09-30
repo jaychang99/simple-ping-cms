@@ -1,16 +1,19 @@
 import styled from '@emotion/styled';
 import { Button, Form, Input, message } from 'antd';
 import { useCreateService } from 'feature/service/hooks/useCreateService';
+import { useRouter } from 'next/router';
 
 const { Item } = Form;
 
 export const FormService = () => {
+  const router = useRouter();
   const { trigger: createService, isMutating } = useCreateService();
 
   const handleFinish = async (values: any) => {
     try {
       await createService(values);
       message.success('서비스가 등록되었습니다.');
+      router.push('/services');
     } catch {
       message.error('서비스 등록에 실패했습니다.');
     }

@@ -1,5 +1,6 @@
 import { ThemeProvider } from '@emotion/react';
 import { AppLayout } from 'components/layout/AppLayout';
+import { useCheckAuth } from 'hooks/useCheckAuth';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -11,6 +12,11 @@ import { fetcher } from 'utils/fetcher';
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const isLoginPage = router.pathname === '/login';
+  const { isAuthed, isAuthNeeded } = useCheckAuth();
+
+  if (!isAuthed && isAuthNeeded) {
+    return <p>접근 권한 확인 중...</p>;
+  }
 
   return (
     <>

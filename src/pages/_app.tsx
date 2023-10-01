@@ -1,6 +1,7 @@
 import { ThemeProvider } from '@emotion/react';
 import CheckingAuth from 'components/error/CheckingAuth';
 import { AppLayout } from 'components/layout/AppLayout';
+import MobileSidebar from 'components/layout/components/MobileSidebar';
 import { useCheckAuth } from 'hooks/useCheckAuth';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -36,6 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
           ) : (
             <AppLayout>
+              <MobileSidebar />
               <Component {...pageProps} />
             </AppLayout>
           )}

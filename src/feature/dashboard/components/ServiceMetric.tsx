@@ -36,4 +36,10 @@ const EmotionWrapper = styled.div`
 
   background-color: #fff;
   box-shadow: ${({ theme }) => theme.shadow.default};
+
+  ${({ theme }) => theme.device.mobile} {
+    padding: 16px 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
 `;

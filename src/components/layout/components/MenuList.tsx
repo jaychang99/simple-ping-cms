@@ -2,9 +2,11 @@ import styled from '@emotion/styled';
 import { Menu } from 'antd';
 import { MENU_ITEM_LIST } from 'components/layout/constants/menuItemList';
 
-interface Props {}
+interface Props {
+  onClickMenuItem?: () => void;
+}
 
-const MenuList = ({}: Props) => {
+const MenuList = ({ onClickMenuItem }: Props) => {
   return (
     <EmotionWrapper>
       <Menu
@@ -14,6 +16,7 @@ const MenuList = ({}: Props) => {
           border: 'none',
           backgroundColor: 'transparent',
         }}
+        onClick={onClickMenuItem}
       />
     </EmotionWrapper>
   );

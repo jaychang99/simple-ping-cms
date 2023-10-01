@@ -22,7 +22,7 @@ const MobileSidebar = ({}: Props) => {
       {isSidebarOpen && (
         <div className="mobile-sidebar">
           <UserProfile />
-          <MenuList />
+          <MenuList onClickMenuItem={handleClickSidebarToggle} />
         </div>
       )}
     </EmotionWrapper>

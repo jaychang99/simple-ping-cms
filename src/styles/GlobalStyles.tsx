@@ -20,6 +20,8 @@ const globalStyles = (theme: Theme) => css`
     font-family: Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI',
       Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
       sans-serif;
+
+    overflow-x: hidden;
   }
 
   body {

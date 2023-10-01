@@ -1,5 +1,9 @@
 import styled from '@emotion/styled';
 import { Statistic } from 'antd';
+import MediaMobileOnly from 'components/mediaQuery/MediaMobileOnly';
+import MediaNoneMobileOnly from 'components/mediaQuery/MediaNoneMobileOnly';
+import ScrollArea from 'components/scrollArea/ScrollArea';
+import { useWindowSize } from 'hooks/useWindowSize';
 import dynamic from 'next/dynamic';
 import { ServiceWithLogs } from 'types/api/service';
 
@@ -14,10 +18,23 @@ const LogChart = dynamic(
 );
 
 const ServiceMetric = ({ name, uuid, logs, url }: Props) => {
+  const { width } = useWindowSize();
+
   return (
     <EmotionWrapper>
       <Statistic title={url} value={name} />
-      <LogChart logs={logs} />
+      <MediaMobileOnly>
+        <div className="mobile-full-width">
+          <ScrollArea options={{ x: width, y: 450 }}>
+            <div className="mobile-chart-scroller">
+              <LogChart logs={logs} />
+            </div>
+          </ScrollArea>
+        </div>
+      </MediaMobileOnly>
+      <MediaNoneMobileOnly>
+        <LogChart logs={logs} />
+      </MediaNoneMobileOnly>
     </EmotionWrapper>
   );
 };
@@ -41,5 +58,15 @@ const EmotionWrapper = styled.div`
     padding: 16px 0;
     background-color: transparent;
     box-shadow: none;
+  }
+
+  .mobile-full-width {
+    margin-left: -40px;
+    margin-right: -40px;
+    background-color: #fff;
+  }
+
+  .mobile-chart-scroller {
+    width: 900px;
   }
 `;

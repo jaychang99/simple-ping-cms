@@ -20,10 +20,13 @@ const MobileSidebar = ({}: Props) => {
       </button>
 
       {isSidebarOpen && (
-        <div className="mobile-sidebar">
-          <UserProfile />
-          <MenuList onClickMenuItem={handleClickSidebarToggle} />
-        </div>
+        <>
+          <div className="dimmed" onClick={handleClickSidebarToggle} />
+          <div className="mobile-sidebar">
+            <UserProfile />
+            <MenuList onClickMenuItem={handleClickSidebarToggle} />
+          </div>
+        </>
       )}
     </EmotionWrapper>
   );
@@ -54,8 +57,21 @@ const EmotionWrapper = styled.div`
     height: 100%;
 
     padding: 32px;
-    width: 80%;
+    max-width: 240px;
     background-color: #fff;
     box-shadow: ${({ theme }) => theme.shadow.default};
+  }
+
+  .dimmed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #000;
+    opacity: 0.5;
   }
 `;

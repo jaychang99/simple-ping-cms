@@ -1,4 +1,5 @@
 import { TableProps, Tag } from 'antd';
+import ColumnItemAdminBadge from 'feature/user/user.list/components/columnItem/ColumnItemAdminBadge';
 import ColumnItemAdminToggle from 'feature/user/user.list/components/columnItem/ColumnItemAdminToggle';
 import { KeyedMutator } from 'swr';
 import { User } from 'types/api/user';
@@ -32,11 +33,8 @@ export const ColumnUserList = ({ mutate }: TColumnUserList) => {
       title: '관리자 여부',
       dataIndex: 'isAdmin',
       width: 120,
-      render: (value, record) => {
-        if (value) {
-          return <Tag color="red">관리자</Tag>;
-        }
-        return <Tag color="gray">비인가 유저</Tag>;
+      render: (value) => {
+        return <ColumnItemAdminBadge isAdmin={value} />;
       },
     },
     {
